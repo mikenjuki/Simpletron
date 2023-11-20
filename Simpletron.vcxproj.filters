@@ -18,5 +18,11 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Maze.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quicksort.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
