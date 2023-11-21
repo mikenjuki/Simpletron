@@ -40,7 +40,8 @@ void initializeMaze() {
 			exitRow = (rand() % MSIZE);
 			entranceCol = (rand() % MSIZE);
 			exitCol = (rand() % MSIZE);
-		} while ((entranceRow == exitRow && entranceCol == exitCol) && exitCol != 0 || exitCol != MSIZE - 1 && entranceRow != 0 || entranceRow != MSIZE - 1);
+		} while ((entranceRow == exitRow && entranceCol == exitCol) || (exitCol != 0 && exitCol != MSIZE - 1) || (entranceRow != 0 && entranceRow != MSIZE - 1)); 
+
 
 	for (int i = 0; i < MSIZE; i++) {
 		for (int j = 0; j < MSIZE; j++) {
