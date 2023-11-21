@@ -33,7 +33,14 @@ int maze()
 }
 
 void initializeMaze() {
+	int entranceRow, entranceCol, exitRow, exitCol;
 
+		do {
+			entranceRow = (rand() % MSIZE);
+			exitRow = (rand() % MSIZE);
+			entranceCol = (rand() % MSIZE);
+			exitCol = (rand() % MSIZE);
+		} while ((entranceRow == exitRow && entranceCol == exitCol) && exitCol != 0 || exitCol != MSIZE - 1 && entranceRow != 0 || entranceRow != MSIZE - 1);
 
 	for (int i = 0; i < MSIZE; i++) {
 		for (int j = 0; j < MSIZE; j++) {
@@ -42,14 +49,25 @@ void initializeMaze() {
 
 			theMaze[i][j] = '#';
 
-			if (i == MSIZE - 1 || i == 0 || j == MSIZE - 1 || j == 0) 
+			if (i == MSIZE - 1 || i == 0 || j == MSIZE - 1 || j == 0)
+			{
 				theMaze[i][j] = '#';
+			}
+			
 			
 			if (randomCol && randomRow)	
 					theMaze[randomRow][randomCol] = '.';
 				
 		}
 	}
+
+	theMaze[entranceRow][entranceCol] = '$';
+	theMaze[exitRow][exitCol] = '@';
+
+	printf("entrance col: %d \n", entranceCol);
+	printf("entrance row: %d \n", entranceRow);
+	printf("exit row: %d \n", exitRow);
+	printf("exit col: %d \n", exitCol);
 
 }
 
@@ -79,5 +97,3 @@ void randomCoordinate() {
 	printf("Value at the random coordinate: %c\n", theMaze[randomRow][randomCol]);
 }
 
-
-//if no way out, say that
