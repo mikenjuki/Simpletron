@@ -46,8 +46,8 @@ int main()
 
 	int accumulator = 0, instructionCounter = 0;
 
-	// maze();
-	quickSort();
+	maze();
+	//quickSort();
 
 
 	return 0;
